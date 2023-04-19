@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travel/view/mainPage.dart';
-import 'package:travel/view/travelDetails.dart';
+import 'package:travel/view/screens/mainPage.dart';
+import 'package:travel/view/screens/traveldetailsSc.dart';
+import 'package:travel/view/screens/TicketDetails.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:mainPage(),
+      home:traveldetailsScreen(),
     );
   }
 }
