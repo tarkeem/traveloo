@@ -39,7 +39,7 @@ class _seatsWidgetState extends State<seatsWidget> {
             });
           },
           child: Container(
-            child: Center(child: Text('${widget.ch} ${index+1}',style: constants().middleFontStyle,),),
+            child: Center(child: Text('${widget.ch} ${index+1}',style: constants().middleFontStyle.copyWith(color: Colors.black),),),
           margin: EdgeInsets.all(1),
           height: 1,width: 1,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color:reserved.contains(index.toString())?Colors.green:Colors.white),));
       },),

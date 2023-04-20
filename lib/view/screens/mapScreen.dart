@@ -22,17 +22,6 @@ class _mapScreenState extends State<mapScreen> {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          Positioned(
-              right: 0,
-              top: 0,
-              child: FloatingActionButton(
-            onPressed: () {
-              Navigator.of(context).push(PageRouteBuilder(pageBuilder: (context, animation, secondaryAnimation) {
-               return FadeTransition(opacity: animation,child: paymentScreen(),);
-              },));
-            },
-            child: Icon(Icons.arrow_forward),
-          )),
           Positioned.fill(child: mapWid()),
           AnimatedPositioned(
             bottom: 0,
@@ -68,7 +57,23 @@ class _mapScreenState extends State<mapScreen> {
             ),
             duration: Duration(milliseconds: 700),
             curve: Curves.bounceOut,
-          )
+          ),
+          Positioned(
+              right: 0,
+              top: 0,
+              child: FloatingActionButton(
+                onPressed: () {
+                  Navigator.of(context).push(PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: paymentScreen(),
+                      );
+                    },
+                  ));
+                },
+                child: Icon(Icons.arrow_forward),
+              )),
         ],
       ),
     );
