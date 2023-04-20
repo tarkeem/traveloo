@@ -47,26 +47,7 @@ class CountryDetailsScreen extends StatelessWidget {
     );
   }
 
-  buildText(String title, String info) {
-    return RichText(
-        maxLines: 1,
-        text: TextSpan(children: [
-          TextSpan(
-              text: title,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-          TextSpan(
-              text: info,
-              style: TextStyle(fontSize: 10, overflow: TextOverflow.ellipsis)),
-        ]));
-  }
 
-  buildDivider(double val) {
-    return Divider(
-      height: 30,
-      endIndent: val,
-      color: Colors.black,
-    );
-  }
 }
 
 class airportScheduling extends StatefulWidget {
