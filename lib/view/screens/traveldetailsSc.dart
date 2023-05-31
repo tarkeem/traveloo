@@ -108,15 +108,24 @@ class _traveldetailsScreenState extends State<traveldetailsScreen> {
             ),
           ),
           Expanded(
+            
             child: Container(
                 decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.3),
                     borderRadius: BorderRadius.circular(10)),
-                child: Row(
+                child: Column(
+                  
                   children: [
-                    Expanded(child: seatsWidget(3, 9, 'E')),
-                    Spacer(),
-                    Expanded(child: seatsWidget(3, 9, 'C')),
+                    Text('Avilable Seats',style:constants().middleFontStyle),
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Expanded(child: seatsWidget(3, 9, 'E')),
+                          Spacer(),
+                          Expanded(child: seatsWidget(3, 9, 'C')),
+                        ],
+                      ),
+                    ),
                   ],
                 )),
           ),

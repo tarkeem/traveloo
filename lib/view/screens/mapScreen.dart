@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:provider/provider.dart';
 import 'package:travel/constants.dart';
+import 'package:travel/controller/pflightProvider.dart';
 import 'package:travel/view/screens/paymentScreen.dart';
 import 'package:travel/view/widget/mapSc.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +51,7 @@ class _mapScreenState extends State<mapScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          !swaped ? nonSwapedWidget() : swapedWidget(),
+                          !swaped ? nonSwapedWidget() : swapedWidget(context),
                         ],
                       ),
                     )),
@@ -80,7 +82,7 @@ class _mapScreenState extends State<mapScreen> {
   }
 }
 
-Widget swapedWidget() {
+Widget swapedWidget(cxt) {
   return Column(
     mainAxisSize: MainAxisSize.max,
     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -132,14 +134,15 @@ Widget swapedWidget() {
       ListTile(
         tileColor: Colors.blue,
         leading: Text(
-          'flight Duration',
+          'Reserved Seats',
           style: constants().middleFontStyle,
         ),
         trailing: Text(
-          '6 hours',
+          Provider.of<flight>(cxt).seatsNum.toString(),
           style: constants().middleFontStyle,
         ),
       ),
+
     ],
   );
 }

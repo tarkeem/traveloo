@@ -1,6 +1,8 @@
  
  import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ticket_widget/ticket_widget.dart';
+import 'package:travel/controller/pflightProvider.dart';
 import 'package:travel/view/screens/traveldetailsSc.dart';
  
  TicketWidget ticketWidget(Size deviceSize, Color col, String txt,cxt) {
@@ -11,7 +13,9 @@ import 'package:travel/view/screens/traveldetailsSc.dart';
       child: GestureDetector(
         onTap: () {
           Navigator.of(cxt).push(PageRouteBuilder(pageBuilder: (context, animation, secondaryAnimation) {
-            return FadeTransition(opacity: animation,child: traveldetailsScreen(),);
+            return FadeTransition(opacity: animation,child: 
+              
+              traveldetailsScreen());
           },));
         },
         child: Column(
